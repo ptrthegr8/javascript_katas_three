@@ -3,7 +3,7 @@ function printResult(textwithquotes, headerwithquotes) {
     var h = document.createTextNode(headerwithquotes);
     myHeader.appendChild(h);
     document.body.appendChild(myHeader);
-    //h2 code above
+    //Header code above
     var myDiv = document.createElement("div"); // Create a <button> element
     var t = document.createTextNode(textwithquotes); // Create a text node
     myDiv.appendChild(t); // Append the text to <button>
