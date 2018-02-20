@@ -7,7 +7,7 @@ function printResult(textwithquotes, headerwithquotes) {
     var myDiv = document.createElement("div"); // Create a <div> element
     var t = document.createTextNode(textwithquotes); // Create a text node
     myDiv.appendChild(t); // Append the text to <div>
-    document.body.appendChild(myDiv); 
+    document.body.appendChild(myDiv);
     //div code above
 }
 // Add
@@ -44,8 +44,9 @@ printResult(multiply(6, 8), "Multiply");
 function power(x, n) {
     let powerResult = 1;
     for (i = 0; i < n; i++) {
-        let xVarResult = (multiply(x, 1)); 
-        powerResult *= xVarResult;
+        powerResult = (multiply(powerResult, x));
+        // let xVarResult = (multiply(x, 1)); 
+        // powerResult *= xVarResult;
     }
     return powerResult;
 }
@@ -59,7 +60,8 @@ printResult(power(2, 8), "Power");
 function factorial(x) {
     let factorialResult = 1;
     for (i = x; i >= 1; i--) {
-        factorialResult *= (multiply(i, 1));
+        // factorialResult *= (multiply(i, 1));
+        factorialResult = multiply(factorialResult, i)
     }
     return factorialResult;
 }
@@ -81,13 +83,12 @@ function fibonacci(n) {
     let newnumb = 1
     for (let i = 0; i < n; i++) {
         let previousoldnumber = newnumb;
-        newnumb = (add (oldnumb, newnumb));
+        newnumb = (add(oldnumb, newnumb));
         oldnumb = previousoldnumber;
-        fibResultOG = (add(fibResult,newnumb));
-        fibResult = (add(fibResultOG,","));
+        fibResultOG = (add(fibResult, newnumb));
+        fibResult = (add(fibResultOG, ","));
     }
     return fibResult;
 }
 
 printResult(fibonacci(8), "Fibonacci");
-
