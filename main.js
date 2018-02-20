@@ -4,10 +4,10 @@ function printResult(textwithquotes, headerwithquotes) {
     myHeader.appendChild(h);
     document.body.appendChild(myHeader);
     //Header code above
-    var myDiv = document.createElement("div"); // Create a <button> element
+    var myDiv = document.createElement("div"); // Create a <div> element
     var t = document.createTextNode(textwithquotes); // Create a text node
-    myDiv.appendChild(t); // Append the text to <button>
-    document.body.appendChild(myDiv);
+    myDiv.appendChild(t); // Append the text to <div>
+    document.body.appendChild(myDiv); 
     //div code above
 }
 // Add
@@ -29,8 +29,8 @@ printResult(add(2, 4), "Add");
 // Display the result of calling multiply(6, 8), which should be 48.
 function multiply(x, y) {
     let multiResult = 0;
-    for (let i = 0; i < y; i++) {
-        multiResult += (add(x, 0));
+    for (let i = 0; i < x; i++) {
+        multiResult = add(multiResult, y); /* multiResult = add(multiresult, y) */
     }
     return multiResult;
 }
@@ -44,7 +44,7 @@ printResult(multiply(6, 8), "Multiply");
 function power(x, n) {
     let powerResult = 1;
     for (i = 0; i < n; i++) {
-        let xVarResult = (multiply(x, 1));
+        let xVarResult = (multiply(x, 1)); 
         powerResult *= xVarResult;
     }
     return powerResult;
@@ -90,3 +90,4 @@ function fibonacci(n) {
 }
 
 printResult(fibonacci(8), "Fibonacci");
+
