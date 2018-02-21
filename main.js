@@ -78,17 +78,15 @@ printResult(factorial(4), "Factorial");
 // The number in brackets is the 8th fibonacci number.
 
 function fibonacci(n) {
-    let fibResult = ''
-    let oldnumb = -1
-    let newnumb = 1
-    for (let i = 0; i < n; i++) {
-        let previousoldnumber = newnumb;
-        newnumb = (add(oldnumb, newnumb));
-        oldnumb = previousoldnumber;
-        fibResultOG = (add(fibResult, newnumb));
-        fibResult = (add(fibResultOG, ","));
+    let fibResult = 1
+    let oldNumb = 0
+    let newNumb = 1
+    for (let i = 2; i < n; i++) {
+        fibResult = oldNumb + newNumb;
+        oldNumb = newNumb;
+        newNumb = fibResult;
     }
-    return fibResult;
+    return fibResult
 }
 
 printResult(fibonacci(8), "Fibonacci");
