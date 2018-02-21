@@ -82,7 +82,7 @@ function fibonacci(n) {
     let oldNumb = 0
     let newNumb = 1
     for (let i = 2; i < n; i++) {
-        fibResult = oldNumb + newNumb;
+        fibResult = add(oldNumb, newNumb);
         oldNumb = newNumb;
         newNumb = fibResult;
     }
